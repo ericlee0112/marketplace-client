@@ -9,7 +9,7 @@ import ForgotPassword from './containers/ForgotPassword';
 import ResetPassword from './containers/ResetPassword';
 import UpdatePassword from './containers/UpdatePassword';
 
-const routes = () = (
+const Routes = () => (
   <div>
     <Switch>
       <Route exact path="/" component={Home} />
@@ -27,3 +27,5 @@ const routes = () = (
     </Switch>
   </div>
 ); 
+
+export default Routes;

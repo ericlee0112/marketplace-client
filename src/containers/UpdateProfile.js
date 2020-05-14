@@ -51,7 +51,7 @@ class UpdateProfile extends Component {
       },
     } = this.props;
     try {
-      const response = await axios.get('http://localhost:3003/findUser', {
+      const response = await axios.get('http://localhost:3000/findUser', {
         params: {
           username,
         },
@@ -96,7 +96,7 @@ class UpdateProfile extends Component {
     e.preventDefault();
     try {
       const response = await axios.put(
-        'http://localhost:3003/updateUser',
+        'http://localhost:3000/updateUser',
         {
           first_name,
           last_name,

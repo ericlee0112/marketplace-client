@@ -15,7 +15,7 @@ const LinkButtons = ({ buttonText, link }) => (
 
 LinkButtons.propTypes = {
   buttonText: PropTypes.string,
-  buttonStyle: PropTypes.object.isRequired,
+  // buttonStyle: PropTypes.object.isRequired,
   link: PropTypes.string,
 };
 

@@ -53,12 +53,13 @@ class Profile extends Component {
       });
     } else {
       try {
-        const response = await axios.get('http://localhost:3003/findUser', {
+        const response = await axios.get('http://localhost:3000/findUser', {
           params: {
             username,
           },
           headers: { Authorization: `JWT ${accessString}` },
         });
+        console.log('response', response);
         this.setState({
           first_name: response.data.first_name,
           last_name: response.data.last_name,
@@ -69,6 +70,7 @@ class Profile extends Component {
           error: false,
         });
       } catch (error) {
+        console.log(error);
         console.error(error.response.data);
         this.setState({
           error: true,
@@ -93,7 +95,7 @@ class Profile extends Component {
 
     e.preventDefault();
     try {
-      const response = await axios.delete('http://localhost:3003/deleteUser', {
+      const response = await axios.delete('http://localhost:3000/deleteUser', {
         params: {
           username,
         },
@@ -203,7 +205,7 @@ class Profile extends Component {
           color="primary"
           onClick={this.logout}
         >
-          <Link style={linkStyle} to="/">
+          <Link to="/">
             Logout
           </Link>
         </Button>
